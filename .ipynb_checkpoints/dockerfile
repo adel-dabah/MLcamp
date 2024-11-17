@@ -1,0 +1,7 @@
+FROM python:3.8.11-slim
+RUN pip install pipenv
+WORKDIR /app
+RUN ls
+COPY ["Pipfile","Pipfile.lock","model_C=10.bin","./"]
+RUN pipenv  install --system --deploy
+
